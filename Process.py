@@ -16,7 +16,7 @@ class Process:
         self.allocated_memory = allocated_memory
         self.user_inst_memory = {} 
         self.instructions = {
-            'LOAD_MOVIE': self.load,
+            'load_video': self.load,
             'PLAY': self.play,
             'PAUSE': self.pause,
             'NEXT': self.next,
