@@ -1,0 +1,62 @@
+    *******Instruções para videos*******
+
+Sintaxe: LOAD_VIDEO name
+Descrição: Busca o video passado como argumento e prepara-o para execução.
+
+Sintaxe: PLAY_VIDEO
+Descrição: Inicia o video que está pronto para rodar ou que foi posto em pausa.
+
+Sintaxe: PAUSE_VIDEO
+Descrição: Pausa o video.
+
+Sintaxe: RESTART_VIDEO
+Descrição: Reinicia o video.
+
+Sintaxe: JUMP time
+Descrição: Comando para adiantar o video, onde time é a quantidade de tempo que se deseja passar.
+
+Sintaxe: JUMP_BACK time
+Descrição: Comando para voltar o video, onde time é quantidade de tempo que se dejesa voltar.
+
+Sintaxe: NEXT_VIDEO
+Descrição: Passa para o próximo video.
+
+Sintaxe: BACK_VIDEO
+Descrição: Passa para o video anterior.
+
+Sintaxe: STOP_VIDEO
+Descrição: Fecha o video.
+
+Sintaxe: VOL_VIDEO value
+Descrição: Atribui um valor para o volume do video.
+
+    *******Instruções para audios*******
+
+Sintaxe: LOAD_AUDIO name
+Descrição: Busca o áudio especificado como argumento e prepara-o para execução.
+
+Sintaxe: PLAY_AUDIO
+Descrição: Inicia o áudio que está pronto para rodar ou que foi posto em pausa.
+
+Sintaxe: PAUSE_AUDIO
+Descrição: Pausa o áudio.
+
+Sintaxe: RESTART_AUDIO
+Descrição: Reinicia o áudio.
+
+Sintaxe: JUMP time
+Descrição: Adianta o áudio, onde time é a quantidade de tempo que você deseja pular.
+
+Sintaxe: JUMP_BACK time
+Descrição: Volta o áudio, onde time é a quantidade de tempo que você deseja retroceder.
+
+Sintaxe: NEXT_AUDIO
+Descrição: Passa para o próximo áudio.
+Sintaxe: BACK_AUDIO
+Descrição: Passa para o áudio anterior.
+
+Sintaxe: STOP_AUDIO
+Descrição: Fecha o áudio.
+
+Sintaxe: VOL_AUDIO value
+Descrição: Atribui um valor para o volume do áudio.

@@ -15,17 +15,7 @@ class Process:
         self.records = records
         self.allocated_memory = allocated_memory
         self.user_inst_memory = {} 
-        self.instructions = {
-            'load_video': self.load,
-            'PLAY': self.play,
-            'PAUSE': self.pause,
-            'NEXT': self.next,
-            'BACK': self.back,
-            'STOP':self.stop,
-            'VOLUME': self.volume,
 
-
-            }
 
     # Instruções
 
