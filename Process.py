@@ -8,47 +8,19 @@
 
 class Process:
 
-    def __init__(self, pid, state, pc, records, allocated_memory):
+    def __init__(self, pid, state, pc, records, allocated_memory, instructions):
         self.pid = pid
         self.state = state
         self.pc = pc
         self.records = records
         self.allocated_memory = allocated_memory
-        self.user_inst_memory = {} 
+        self.instructions = instructions
 
 
-    # Instruções
-
-    # Carrega o filme
-    # receber file ou URL ?
-    def load(self, file):
-        pass
-    
-    # Inicia o filme
-    def play(self):
-        pass
-
-    # Para a reprodução do filme
-    def stop(self):
-        pass
-
-    # Pausa o filme
-    def pause(self):
-        pass
-
-    # Avança uma certa quantidade de tempo
-    def next(self):
-        pass
-
-    # Volta uma certa quantidade de tempo
-    def back(self):
-        pass
-
-    # Ajusta o valor do volume
-    def volume(self, valor):
-        pass
-
-
+    def __str__(self):
+        return (f"PID: {self.pid}, State: {self.state}, PC: {self.pc}, "
+                f"Records: {self.records}, Allocated Memory: {self.allocated_memory} KB, "
+                f"Instructions: {self.instructions}")
     # decodifica as instruções
     def decode_instruction(self, instruction):
         parts = instruction.split()
