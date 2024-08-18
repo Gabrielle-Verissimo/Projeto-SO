@@ -6,10 +6,17 @@ class ProcessManager:
         self.pidCounter = 1
         
     def createProcess(self, instructions):
-        process = Process(self.pidCounter, 'new', 0, ['eax, ebx'], 1024, instructions)
+        process = Process(str(self.pidCounter), 'new', 0, instructions)
         self.processList.append(process)
         self.pidCounter += 1 
     
     def  listProcess(self):
         for p in self.processList:
             print(p)
+            
+    #tirar o retorno depois dos testes
+    def updateState(self, pid):
+        p = ''
+        for p in self.processList:
+            if p.getPID() == pid:
+                return p

@@ -2,9 +2,4 @@ Primeira entrega:
 -Gerenciador de Processos
 -Escalonador
 -Simulador de Execução de Processos
-
-TODO:
--Gerenciador de processos:
-    *Gerar os registradores
-    *Gerar o tamanho de memória para alocar
     
