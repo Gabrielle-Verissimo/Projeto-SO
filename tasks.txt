@@ -1,5 +1,5 @@
 Primeira entrega:
--Gerenciador de Processos
--Escalonador
--Simulador de Execução de Processos
+- Gerenciador de Processos
+- Escalonador
+- Simulador de Execução de Processos
     
