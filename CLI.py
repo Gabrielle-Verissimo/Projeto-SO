@@ -14,6 +14,10 @@ class CLI(cmd.Cmd):
     def do_list_process(self, line):
         """List all processes."""
         processManager.listProcess()
+        
+    def do_run_process(self, line):
+        """Executar processo"""
+        processManager.runProcess(line)
 
     def do_quit(self, line):
         """Exit the CLI."""
