@@ -13,14 +13,15 @@ class ProcessManager:
         process = Process(str(self.pidCounter), 'new', 0, instructions)
         self.processList.append(process)
         self.pidCounter += 1 
-        threading.Thread(target=self.runProcess, args=(process, )).start()
+        #threading.Thread(target=self.runProcess, args=(process, )).start()
     
     def runProcess(self, pid):
         for p in self.processList:
             if p.getPID() == pid:
-                p.setState('pronto')
-                self.scheduler.readyList.append(p)
-        
+                self.scheduler.appendReadyList(p)
+                #self.scheduler.readyList.append(p)
+                self.scheduler.run()
+    
     def  listProcess(self):
         for p in self.processList:
             print(p)

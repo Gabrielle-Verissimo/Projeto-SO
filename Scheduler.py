@@ -16,36 +16,31 @@ class Scheduler:
         self.readyList = []
         self.runList = []
         
-    async def execute(self):
-        if len(self.readyList) < 2:
-            process = self.readyList.pop(0)
-            self.runList.append(process)
-            while(1):
-                print(f'Executando processo: {process}')
-        else:
-            process = self.readyList.pop(0)
-            self.runList.append(process)
-            await asyncio.sleep(1)
-        
-    def run_process(self):
-        while self.readyList:
-            # Move o primeiro processo da lista de prontos para a lista de execução
-            process = self.readyList.pop(0)
-            process.setState('executando')
-            self.runList.append(process)
-            
-            # Simula a execução do processo por 100ms
-            #print(f"Executando processo: {process}")
-            #print(process.getState())
-            time.sleep(1)
-            process.setState('pronto')
-            # Move o processo de volta para a lista de prontos
-            self.runList.remove(process)
-            self.readyList.append(process)
-            #print(f"Processo {process} voltou para a lista de prontos")
+    # async def execute(self):
+    #     if len(self.readyList) < 2:
+    #         process = self.readyList.pop(0)
+    #         self.runList.append(process)
 
-    # def start(self):
-    #     thread = threading.Thread(target=self.run_process)
-    #     thread.daemon = True
-    #     thread.start()
+    #     else:
+    #         process = self.readyList.pop(0)
+    #         self.runList.append(process)
+    #         await asyncio.sleep(1)
+        
+    async def run(self):
+        process = self.readyList.pop(0)
+        self.runList.append(process)
+        if len(self.readyList) < 2:    
+            print(f'Executando processo: {process}')
+            await asyncio.sleep(1)
+        else:
+            print('entrou aqui')
+            await asyncio.sleep(1)
+            self.readyList.append
     
+    def appendReadyList(self, p):
+        p.setState('pronto')
+        self.readyList.append(p)
+        
+    def appendRunList(self, p):
+        p.setState('executando')
+        self.runList.append(p)
