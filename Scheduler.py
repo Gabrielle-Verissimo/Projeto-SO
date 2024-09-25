@@ -26,15 +26,15 @@ class Scheduler:
     #         self.runList.append(process)
     #         await asyncio.sleep(1)
         
-    async def run(self):
+    def run(self):
         process = self.readyList.pop(0)
         self.runList.append(process)
         if len(self.readyList) < 2:    
             print(f'Executando processo: {process}')
-            await asyncio.sleep(1)
+            time.sleep(1)
         else:
             print('entrou aqui')
-            await asyncio.sleep(1)
+            time.sleep(1)
             self.readyList.append
     
     def appendReadyList(self, p):
