@@ -146,9 +146,3 @@ commands = [
     "VOL_AUDIO 60",
     "STOP_AUDIO"
 ]
-
-# for cmd in commands:
-#     executed = compiler.execute_command(cmd)
-#     if not executed:
-#         print(f"comando invalido: {cmd}")
-#         break

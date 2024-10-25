@@ -25,9 +25,12 @@ class ProcessManager:
                 threading.Thread(target=self.runScheduler).start()
                 
     def runScheduler(self):
+        f = random.randint(0, 1) 
         with self.lock:  # Bloqueia a execução até que o processo atual termine
-            self.scheduler.fifo()  # Executa o método FIFO
-                
+            if f == 0:
+                self.scheduler.roundRobin()
+            else:
+                self.scheduler.fifo()
     
     def  listProcess(self):
         for p in self.processList:
