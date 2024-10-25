@@ -1,10 +1,3 @@
-# Cada processo deve conter:
-# PID (Process Identifier)
-# Estado do Processo (pronto, executando, bloqueado, terminado)
-# Contador de Programa (PC)
-# Registros
-# Memória Alocada
-# Instruções
 
 class Process:
 
@@ -13,8 +6,6 @@ class Process:
         self.state = state
         self.pc = pc
         self.burstTime = burstTime # tempo que leva para ser concluído em ms
-        # self.records = records
-        # self.allocated_memory = allocated_memory
         self.instructions = instructions
 
 

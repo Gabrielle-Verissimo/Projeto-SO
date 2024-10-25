@@ -22,10 +22,10 @@ class ProcessManager:
             if p.getPID() == pid:
                 p.setState('pronto')
                 self.scheduler.appendReadyList(p)
-                threading.Thread(target=self.runScheduler).start()
+                threading.Thread(target=self.runScheduler).start() #cria uma thread para não bloquear o console
                 
     def runScheduler(self):
-        f = random.randint(0, 1) 
+        f = random.randint(0, 1)
         with self.lock:  # Bloqueia a execução até que o processo atual termine
             if f == 0:
                 self.scheduler.roundRobin()

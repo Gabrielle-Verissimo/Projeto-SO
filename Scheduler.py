@@ -20,6 +20,7 @@ class Scheduler:
             process = self.readyList.pop(0)  # Remove o primeiro processo da lista de prontos
             self.runList.append(process)
             process.setState('executando')
+            print('fifo')
             print(f"Executando processo: {process.getPID()}")
             time.sleep(process.getBurstTime() / 1000)
             self.runList.remove(process)
@@ -32,22 +33,24 @@ class Scheduler:
             process = self.readyList.pop(0)  # Remove o primeiro processo da lista de prontos
             self.runList.append(process)
             process.setState('executando')
+            print('roundRobin')
             print(f"Executando processo: {process.getPID()}")
             time.sleep(quantum / 1000)
             # Simula execução do processo até o fim do quantum ou até o término do burst time
+            self.runList.remove(process)
             if process.getBurstTime() <= quantum:
-                self.runList.remove(process)
                 process.setState('concluído')
             else:
                 process.setBurstTime(process.getBurstTime() - quantum)  # Reduz o burst time do processo
                 self.readySJF.append(process)  # Reinsere o processo ao final da fila de prontos do SJF
+                self.sjf()
 
     # Método SJF (Shortest Job First)
     def sjf(self):
         while self.readySJF:
             # Ordena a lista de prontos pelo burst time
             self.readySJF.sort(key=lambda p: p.getBurstTime())
-            process = self.readyList.pop(0)  # Remove o processo com menor burst time
+            process = self.readySJF.pop(0)  # Remove o processo com menor burst time
             self.runSJF.append(process)
             process.setState('executando')
             print(f"Executando processo: {process.getPID()}")
